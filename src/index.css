@@ -1,0 +1,164 @@
+:root {
+  --font-family-base: "Golos Text", sans-serif;
+  --font-family-title: "Merriweather", sans;
+
+  --color-text: #313131;
+  --color-text-red: #f54932;
+  --color-bg: #f5f7fb;
+  --color-surface: #fff;
+  --color-btn-primary: #313131;
+  --color-btn-primary-hover: #fbce51;
+
+  --color-btn-secondary: transparent;
+  --color-btn-secondary-hover: var(--color-btn-primary);
+  --radius-md: 12px;
+  --shadow-md: 0 10px 30px rgb(0 0 0 / 8%);
+  --container-max-width: 560px;
+
+  /* Drop your files in /assets and update these paths. */
+  --bg-page-image: none;
+  --bg-surface-image: none;
+  --icon-logo: none;
+}
+
+/* Base reset / defaults */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  padding: 0;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+}
+
+textarea:not([rows]) {
+  min-height: 8rem;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+body {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: clamp(20px, 5vw, 72px);
+  width: 100%;
+  font-family: var(--font-family-base);
+  min-height: 100vh;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  background-image: var(--bg-page-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.page-shell {
+  min-height: 100vh;
+  width: min(100%, calc(var(--container-max-width) + 2rem));
+  margin-inline: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  background-image: var(--bg-surface-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.hero {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand__name {
+  font-weight: 700;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.icon--logo {
+  background-image: var(--icon-logo);
+}

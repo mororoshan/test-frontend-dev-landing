@@ -1,0 +1,149 @@
+header {
+  width: 100%;
+}
+
+.header-container {
+  width: 100%;
+}
+
+.header-logo {
+  font-size: clamp(16.65px, 2vw, 14.42px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000;
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 10px;
+
+  margin-top: clamp(18px, 2vw, 26px);
+}
+
+.header-logo__text {
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+
+  line-height: 0.6em;
+
+  font-size: clamp(16.65px, 2vw, 14.42px);
+}
+
+.header-logo__icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.73px;
+}
+
+.header-logo__icon img {
+  width: 21.65px;
+  height: 31.18px;
+}
+
+.header-content {
+  max-width: 542px;
+  margin-top: clamp(18px, 2vw, 26px);
+}
+
+.header-content__title {
+  font-size: clamp(36px, 5vw, 60px);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-title);
+  text-transform: uppercase;
+}
+
+.header-content__description {
+  font-size: clamp(16px, 2vw, 20px);
+  text-align: center;
+  margin-top: 24px;
+  font-size: 18px;
+}
+
+.header-content__title span:first-child {
+  display: inline-block;
+  align-self: flex-start;
+  text-align: left;
+}
+.header-content__title span:last-child {
+  display: inline-block;
+  align-self: center;
+  text-align: center;
+}
+
+.header-content__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: clamp(32px, 5vw, 40px);
+}
+
+.button-primary,
+.button-secondary {
+  padding: 18px 20px;
+  border-radius: 66px;
+  text-align: center;
+  min-width: 335px;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-primary > span,
+.button-secondary > span {
+  display: inline-block;
+}
+
+.button-primary {
+  background: var(--color-btn-primary);
+  color: #fff;
+}
+
+.button-primary:hover {
+  background: var(--color-btn-primary-hover);
+  color: var(--color-text);
+}
+
+.button-secondary {
+  background: var(--color-btn-secondary);
+  color: var(--color-text);
+  border: 2px solid var(--color-btn-primary);
+}
+
+.button-secondary:hover {
+  background: var(--color-btn-secondary-hover);
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .header-container {
+    width: 60%;
+  }
+
+  .header-content__buttons {
+    flex-direction: row;
+  }
+
+  .button-primary,
+  .button-secondary {
+    padding: 20px;
+    min-width: 263px;
+    flex-direction: column;
+  }
+}
