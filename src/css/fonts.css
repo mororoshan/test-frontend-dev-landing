@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Golos Text";
+  src: url("../assets/fonts/GolosText-VariableFont_wght.ttf")
+    format("truetype-variations");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url("../assets/fonts/Merriweather-VariableFont_opsz,wdth,wght.ttf")
+    format("truetype-variations");
+  font-weight: 300 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,55 +1,104 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Task Template</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Test Task Template</title>
-  <link rel="stylesheet" href="./index.css" />
-  <link rel="stylesheet" href="./styles.css" />
-</head>
+  <body>
+    <div class="page-shell">
+      <header>
+        <div class="header-container">
+          <section class="header-logo">
+            <div class="header-logo__icon">
+              <img src="./assets/icons/KnightIcon.svg" alt="Логотип — конь" />
+              <img src="./assets/icons/KnightIcon.svg" alt="" aria-hidden="true" />
+              <img src="./assets/icons/KnightIcon.svg" alt="" aria-hidden="true" />
+              <img src="./assets/icons/KnightIcon.svg" alt="" aria-hidden="true" />
+            </div>
 
-<body>
+            <div class="header-logo__text">
+              <span>Клуб</span>
+              <span>четырех коней</span>
+            </div>
+          </section>
 
-  <header class="">
-    <div class="header-container">
-      <div class="header-logo">
-        <div class="header-logo__icon">
-          <img src="./assets/icons/KnightIcon.svg" alt="Logo" />
-          <img src="./assets/icons/KnightIcon.svg" alt="Logo" />
-          <img src="./assets/icons/KnightIcon.svg" alt="Logo" />
-          <img src="./assets/icons/KnightIcon.svg" alt="Logo" />
-        </div>
+          <section class="header-content">
+            <div class="header-content__title">
+              <span
+                >Превратите <br />
+                уездный город</span
+              >
+              <span
+                >в столицу <br />
+                земного шара</span
+              >
+            </div>
+            <div class="header-content__description">
+              <span
+                >Оплатите взнос на телеграммы
+                <span class="header-content__description-continue"
+                  >для организации Международного<wbr /> васюкинского турнира по шахматам</span
+                ></span
+              >
+            </div>
 
-        <div class="header-logo__text">
-          <span>Клуб</span>
-          <span>четырех коней</span>
+            <div class="header-content__buttons">
+              <button class="button-primary" type="button">
+                <span class="button__label">Поддержать<wbr /> шахматную мысль</span>
+              </button>
+              <button class="button-secondary" type="button">
+                <span class="button__label">Подробнее<wbr /> о турнире</span>
+              </button>
+            </div>
+          </section>
         </div>
-      </div>
-      <div class="header-content">
-        <div class="header-content__title">
-          <span>Превратите <br> уездный город</span>
-          <span>в столицу <br> земного шара</span>
-        </div>
-        <div class="header-content__description">
-          <span>Оплатите взнос на телеграммы для организации Международного васюкинского турнира
-            по шахматам</span>
-        </div>
+      </header>
 
-        <div class="header-content__buttons">
-          <button class="button-primary">
-            <span>Поддержать</span> <span></span>шахматную мысль</span>
-          </button>
-          <button class="button-secondary">
-            <span>Подробнее</span> <span>о турнире</span>
-          </button>
+      <section class="running-text" aria-label="Бегущая строка">
+        <div class="running-text__container">
+          <div class="running-text__track">
+            <div class="running-text__content">
+              <span
+                >Дело помощи утопающим — дело рук самих утопающих! • Шахматы двигают вперед не
+                только культуру, но и экономику! • Лед тронулся, господа присяжные заседатели!
+                •</span
+              >
+            </div>
+            <div class="running-text__content running-text__content--duplicate">
+              <span
+                >Дело помощи утопающим — дело рук самих утопающих! • Шахматы двигают вперед не
+                только культуру, но и экономику! • Лед тронулся, господа присяжные заседатели! •
+              </span>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <main class="main-content">
+        <div class="main-content__container">
+          <div class="main-content__title title-text">
+            <span
+              >Чтобы поддержать Международный васюкинский турнир
+              <span class="desktop">
+                посетите лекцию на тему:<span class="red-text"> «Плодотворная дебютная идея»</span>
+              </span></span
+            >
+          </div>
+          <img
+            class="main-content__image"
+            src="./assets/images/MainContentImage.png"
+            alt="Main Content Image"
+          />
+          <div class="main-content__title title-text mobile" aria-hidden="true">
+            <span>посетите лекцию на тему:</span>
+            <span class="red-text"> «Плодотворная дебютная идея»</span>
+          </div>
+        </div>
+      </main>
     </div>
-  </header>
-
-
-  <script src="./script.js"></script>
-</body>
-
+    <script src="./script.js"></script>
+  </body>
 </html>

@@ -1,0 +1,33 @@
+:root {
+  --font-family-base: "Golos Text", sans-serif;
+  --font-family-title: "Merriweather", serif;
+
+  --color-text: #313131;
+  --color-text-brown: #5c5248;
+  --color-text-red: #f54932;
+  --color-bg: #f5f7fb;
+  --color-surface: #fff;
+  --color-surface-light-brown: #e9ded4;
+  --color-btn-primary: #313131;
+  --color-btn-primary-hover: #fbce51;
+
+  --color-btn-secondary: transparent;
+  --color-btn-secondary-hover: var(--color-btn-primary);
+  --radius-md: 12px;
+  --shadow-md: 0 10px 30px rgb(0 0 0 / 8%);
+  --container-max-width: 560px;
+
+  --bg-header-image: url("../assets/backgrounds/HeaderBg.jpg");
+  --bg-header-image-mobile: url("../assets/backgrounds/HeaderBgMobile.jpg");
+  --bg-page-image: none;
+  --bg-surface-image: none;
+  --icon-logo: none;
+}
+
+.red-text {
+  color: var(--color-text-red);
+}
+
+.brown-text {
+  color: var(--color-text-brown);
+}

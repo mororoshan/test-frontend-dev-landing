@@ -1,0 +1,70 @@
+/* Base reset / defaults */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  padding: 0;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+}
+
+textarea:not([rows]) {
+  min-height: 8rem;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+body {
+  width: 100%;
+  background-color: var(--color-surface-light-brown);
+  font-family: var(--font-family-base);
+  min-height: 100vh;
+  color: var(--color-text);
+}
