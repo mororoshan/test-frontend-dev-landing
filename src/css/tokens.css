@@ -10,6 +10,7 @@
   --color-surface-light-brown: #e9ded4;
   --color-btn-primary: #313131;
   --color-btn-primary-hover: #fbce51;
+  --color-btn-light-gray: #d0d0d0;
 
   --color-btn-secondary: transparent;
   --color-btn-secondary-hover: var(--color-btn-primary);
@@ -26,6 +27,10 @@
 
 .red-text {
   color: var(--color-text-red);
+}
+
+.bold-text {
+  font-weight: 700;
 }
 
 .brown-text {

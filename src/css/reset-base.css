@@ -48,6 +48,10 @@ select {
   font: inherit;
 }
 
+table {
+  border-spacing: 0;
+}
+
 button {
   border: 0;
   background: none;
