@@ -9,7 +9,7 @@
 
   <body>
     <div class="page-shell">
-      <header>
+      <header class="header">
         <div class="header-container">
           <section class="header-logo">
             <div class="header-logo__icon">
@@ -46,10 +46,18 @@
             </div>
 
             <div class="header-content__buttons">
-              <button class="button-primary" type="button">
+              <button
+                class="button-primary"
+                type="button"
+                onclick="scrollToSection('comp-section')"
+              >
                 <span class="button__label">Поддержать<wbr /> шахматную мысль</span>
               </button>
-              <button class="button-secondary" type="button">
+              <button
+                class="button-secondary"
+                type="button"
+                onclick="scrollToSection('session-details')"
+              >
                 <span class="button__label">Подробнее<wbr /> о турнире</span>
               </button>
             </div>
@@ -57,29 +65,11 @@
         </div>
       </header>
 
-      <section class="running-text" aria-label="Бегущая строка">
-        <div class="running-text__container">
-          <div class="running-text__track">
-            <div class="running-text__content">
-              <span
-                >Дело помощи утопающим — дело рук самих утопающих! • Шахматы двигают вперед не
-                только культуру, но и экономику! • Лед тронулся, господа присяжные заседатели!
-                •</span
-              >
-            </div>
-            <div class="running-text__content running-text__content--duplicate">
-              <span
-                >Дело помощи утопающим — дело рук самих утопающих! • Шахматы двигают вперед не
-                только культуру, но и экономику! • Лед тронулся, господа присяжные заседатели! •
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section id="running-line" class="running-text" aria-label="Бегущая строка"></section>
 
       <main class="main-content">
         <div class="main-content__container">
-          <section class="main-content__comp-section">
+          <section id="comp-section" class="main-content__comp-section">
             <div class="main-content__title title-text">
               <span
                 >Чтобы поддержать Международный васюкинский турнир
@@ -100,7 +90,7 @@
               <span class="red-text"> «Плодотворная дебютная идея»</span>
             </div>
           </section>
-          <section class="main-content__session-details">
+          <section id="session-details" class="main-content__session-details">
             <div class="main-content__image-stack">
               <img
                 class="main-content__collage"
@@ -148,32 +138,104 @@
                       <span>Стоимость входных билетов:</span>
                     </td>
                     <td>
-                      <span>20 коп.</span>
+                      <span>20 коп.</span>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <span>Плата за игру:</span>
+                      <span>Плата за игру:</span>
                     </td>
                     <td>
-                      <span>50 коп.</span>
+                      <span>50коп.</span>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <span>Взнос на телеграммы:</span>
+                      <span>Взнос на телеграммы:</span>
                     </td>
                     <td>
-                      <span>100 руб. 21 руб. 16 коп.</span>
+                      <span><span class="line-through-red">100 руб.</span> 21 руб. 16 коп.</span>
                     </td>
                   </tr>
                 </tbody>
               </table>
+              <div class="questions-anchor">
+                <a href="#questions" class="questions-anchor__link">
+                  <span>По всем вопросам обращаться в администрацию к К. Михельсону</span>
+                </a>
+              </div>
             </div>
           </section>
         </div>
       </main>
+
+      <section class="stages-section">
+        <header class="stages-section__header">
+          <div>
+            <span class="stages-section__title"> Этапы преображения</span>
+          </div>
+          <div>
+            <span class="stages-section__title">Васюков</span>
+            <span class="stages-section__subtitle blue-text"
+              >Будущие источники обогащения васюкинцев</span
+            >
+          </div>
+        </header>
+        <div class="stages-selection__content">
+          <ul class="stages-section__list">
+            <li class="stages-section__item">
+              <div class="stages-section__item-number">1</div>
+              <div class="stages-section__item-text">Строительство железнодорожной магистрали Москва-Васюки</div>
+            </li>
+            <li class="stages-section__item">
+              <div class="stages-section__item-number">2</div>
+              <div class="stages-section__item-text">Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</div>
+            </li>
+            <li class="stages-section__item">
+              <div class="stages-section__item-number">3</div>
+              <div class="stages-section__item-text">
+                Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей,
+                фруктов, икры, шоколадных конфет
+              </div>
+            </li>
+            <li class="stages-section__item">
+              <div class="stages-section__item-number">4</div>
+              <div class="stages-section__item-text">Строительство дворца для турнира</div>
+            </li>
+            <li class="stages-section__item">
+              <div class="stages-section__item-number">5</div>
+              <div class="stages-section__item-text">Размещение гаражей для гостевого автотранспорта</div>
+            </li>
+            <li class="stages-section__item">
+              <div class="stages-section__item-number">6</div>
+              <div class="stages-section__item-text">
+                Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
+              </div>
+            </li>
+            <li class="stages-section__item">
+              <div class="stages-section__item-number">7</div>
+              <div class="stages-section__item-text">
+                Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и
+                дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="running-line" class="running-text" aria-label="Бегущая строка"></section>
+
+      <footer>
+        <div class="footer-container">
+          <div class="footer-content">
+            <div class="footer-content__title">
+              <span>Клуб «Картонажник»</span>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="./script.js"></script>
+    <script src="./js/components/running-line.js"></script>
   </body>
 </html>

@@ -30,6 +30,13 @@ ul[role="list"],
 ol[role="list"] {
   list-style: none;
   padding: 0;
+  padding-left: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
 }
 
 img,
@@ -63,6 +70,18 @@ textarea:not([rows]) {
 
 :target {
   scroll-margin-block: 5ex;
+}
+
+a {
+  color: inherit;
+  font-family: var(--font-family-base);
+  text-decoration: none;
+
+  &:active {
+    color: inherit;
+    font-family: var(--font-family-base);
+    text-decoration: none;
+  }
 }
 
 body {

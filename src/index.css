@@ -1,4 +1,3 @@
-/* Entry: load order matters for the cascade */
 @import "./css/fonts.css";
 @import "./css/tokens.css";
 @import "./css/reset-base.css";
@@ -6,3 +5,5 @@
 @import "./css/header-section.css";
 @import "./css/buttons.css";
 @import "./css/main-content.css";
+@import "./css/footer.css";
+@import "./css/stages-section.css";

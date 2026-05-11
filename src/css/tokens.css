@@ -5,12 +5,14 @@
   --color-text: #313131;
   --color-text-brown: #5c5248;
   --color-text-red: #f54932;
+  --color-text-blue: #3057A2;
   --color-bg: #f5f7fb;
   --color-surface: #fff;
   --color-surface-light-brown: #e9ded4;
   --color-btn-primary: #313131;
   --color-btn-primary-hover: #fbce51;
   --color-btn-light-gray: #d0d0d0;
+  --color-text-gray: #6f6f6f;
 
   --color-btn-secondary: transparent;
   --color-btn-secondary-hover: var(--color-btn-primary);
@@ -20,6 +22,7 @@
 
   --bg-header-image: url("../assets/backgrounds/HeaderBg.jpg");
   --bg-header-image-mobile: url("../assets/backgrounds/HeaderBgMobile.jpg");
+  --bg-stages-texture-image: url("../assets/images/texture.svg");
   --bg-page-image: none;
   --bg-surface-image: none;
   --icon-logo: none;
@@ -29,10 +32,19 @@
   color: var(--color-text-red);
 }
 
+.blue-text {
+  color: var(--color-text-blue);
+}
+
 .bold-text {
   font-weight: 700;
 }
 
 .brown-text {
   color: var(--color-text-brown);
+}
+
+.line-through-red {
+  text-decoration: line-through;
+  text-decoration-color: var(--color-text-red);
 }

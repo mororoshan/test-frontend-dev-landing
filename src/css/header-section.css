@@ -1,11 +1,10 @@
-header {
+.header {
   display: flow-root;
   width: 100%;
   padding-top: clamp(18px, 5vw, 26px);
   background-color: var(--color-surface-light-brown);
   background-image: var(--bg-header-image-mobile);
   background-repeat: no-repeat;
-  /* Mobile: lift background 20px from bottom edge */
   background-position: center bottom -40px;
   background-size: 100%;
 }
@@ -164,7 +163,7 @@ header {
 }
 
 @media (min-width: 796px) {
-  header {
+  .header {
     background-image: var(--bg-header-image);
     background-size: cover;
     background-position: bottom center;
