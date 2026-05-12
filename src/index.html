@@ -181,55 +181,42 @@
             >
           </div>
         </header>
-        <div class="stages-selection__content">
-          <ul class="stages-section__list">
-            <li class="stages-section__item">
-              <div class="stages-section__item-number">1</div>
-              <div class="stages-section__item-text">Строительство железнодорожной магистрали Москва-Васюки</div>
-            </li>
-            <li class="stages-section__item">
-              <div class="stages-section__item-number">2</div>
-              <div class="stages-section__item-text">Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</div>
-            </li>
-            <li class="stages-section__item">
-              <div class="stages-section__item-number">3</div>
-              <div class="stages-section__item-text">
-                Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей,
-                фруктов, икры, шоколадных конфет
-              </div>
-            </li>
-            <li class="stages-section__item">
-              <div class="stages-section__item-number">4</div>
-              <div class="stages-section__item-text">Строительство дворца для турнира</div>
-            </li>
-            <li class="stages-section__item">
-              <div class="stages-section__item-number">5</div>
-              <div class="stages-section__item-text">Размещение гаражей для гостевого автотранспорта</div>
-            </li>
-            <li class="stages-section__item">
-              <div class="stages-section__item-number">6</div>
-              <div class="stages-section__item-text">
-                Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
-              </div>
-            </li>
-            <li class="stages-section__item">
-              <div class="stages-section__item-number">7</div>
-              <div class="stages-section__item-text">
-                Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и
-                дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
-              </div>
-            </li>
-          </ul>
+        <div class="stages-selection__content" data-stages></div>
+      </section>
+
+      <section class="competitors-section" data-competitors aria-labelledby="competitors-heading">
+        <div class="competitors-section__container">
+          <header class="competitors-section__header">
+            <h2 class="competitors-section__title" id="competitors-heading">
+              <span>Участники турнира</span>
+            </h2>
+          </header>
+          <div
+            class="competitors-carousel__viewport"
+            data-competitors-viewport
+            tabindex="0"
+            role="region"
+            aria-roledescription="горизонтальная карусель"
+            aria-label="Список участников"
+          ></div>
+          <div
+            class="competitors-section__carousel-nav"
+            data-competitors-nav
+            aria-label="Навигация по участникам"
+          ></div>
         </div>
       </section>
 
-      <section id="running-line" class="running-text" aria-label="Бегущая строка"></section>
-
-      <footer>
+      <footer class="footer">
         <div class="footer-container">
+          <section id="running-line" class="running-text" aria-label="Бегущая строка"></section>
           <div class="footer-content">
             <div class="footer-content__title">
-              <span>Клуб «Картонажник»</span>
+              <span>
+                Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям
+                сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения
+                Петрова «Двенадцать стульев».
+              </span>
             </div>
           </div>
         </div>
@@ -237,5 +224,9 @@
     </div>
     <script src="./script.js"></script>
     <script src="./js/components/running-line.js"></script>
+    <script src="./js/components/stages-carousel.js"></script>
+    <script src="./js/components/data-stages.js"></script>
+    <script src="./data/competiors.js"></script>
+    <script src="./js/components/competitors-list.js"></script>
   </body>
 </html>

@@ -16,12 +16,16 @@
 .stages-section__title {
   display: inline-block;
   max-width: 66%;
+  font-size: clamp(36px, 5vw, 54px);
 }
 
 .stages-section__subtitle {
-  font-size: 18px;
+  font-family: var(--font-family-base);
+  font-size: clamp(18px, 4.2vw, 20px);
   font-weight: 400;
   line-height: 1.1;
+  display: inline-block;
+  max-width: 400px;
 }
 
 .stages-selection__content {
@@ -57,6 +61,30 @@
   background-size: cover;
   background-position: center;
   background-blend-mode: color-burn;
+}
+
+.stages-section__item:nth-child(7) {
+  overflow: visible;
+}
+
+.stages-section__item:nth-child(7) .stages-section__item-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.stages-section__item-text:has(> img) {
+  position: relative;
+}
+
+.stages-section__item-text:has(> img)>span {
+  display: inline-block;
+  max-width: 58%;
+}
+
+.stages-section__item-text>img {
+  position: absolute;
+  right: -90px;
+  bottom: -20px;
 }
 
 .stages-section__item .stages-section__item-number {
@@ -113,4 +141,223 @@
 .stages-section__item:nth-child(7) {
   grid-column: 5 / span 8;
   grid-row: 3;
+}
+
+@media (max-width: 1280px) {
+  .stages-selection__content:has(.stages-mobile-carousel) {
+    display: block;
+    max-width: 335px;
+    width: 100%;
+    margin-inline: auto;
+    column-gap: unset;
+  }
+}
+
+.stages-mobile-carousel {
+  position: relative;
+  padding-top: 0;
+  font-family: var(--font-family-base);
+  margin-top: 128px;
+}
+
+.stages-mobile-carousel__plane {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  z-index: 3;
+  width: 335px;
+  transform: translate(-50%, -22%);
+  pointer-events: none;
+}
+
+.stages-mobile-carousel__plane img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.stages-mobile-carousel__viewport {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  min-height: 300px;
+  isolation: isolate;
+  padding-top: 0;
+}
+
+.stages-mobile-carousel__track {
+  display: flex;
+  width: calc(5 * 100%);
+  min-height: 300px;
+  /* GPU layer: translate3d in JS; short ease-out reads snappier than ease */
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.32, 1);
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stages-mobile-carousel__track {
+    transition: none;
+  }
+}
+
+.stages-mobile-carousel__slide {
+  box-sizing: border-box;
+  flex: 0 0 20%;
+  width: 20%;
+  padding: 0 2px;
+  contain: paint;
+}
+
+.stages-mobile-carousel__card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 280px;
+  max-height: 320px;
+  padding: 20px 16px 20px 16px;
+  overflow-y: auto;
+  transform: translateZ(0);
+
+  background-color: var(--color-surface-light-brown);
+  background-image: var(--bg-stages-texture-image);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: color-burn;
+}
+
+.stages-mobile-carousel__row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Plane overlap: only the first row in each card needs top inset */
+.stages-mobile-carousel__card>.stages-mobile-carousel__row:first-child {
+  padding-top: 62px;
+}
+
+.stages-mobile-carousel__number {
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-text);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface);
+}
+
+.stages-mobile-carousel__text {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(16px, 4.2vw, 18px);
+  line-height: 1.25;
+  color: var(--color-text);
+}
+
+.stages-mobile-carousel__controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.stages-mobile-carousel__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--color-surface);
+  background-color: var(--color-btn-primary);
+  transition: background-color 0.15s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hover only with real hover (avoids sticky :hover after tap on touch) */
+@media (hover: hover) and (pointer: fine) {
+  .stages-mobile-carousel__arrow:hover:not(:disabled) {
+    background-color: var(--color-btn-primary-hover);
+  }
+}
+
+@media (hover: none) {
+  .stages-mobile-carousel__arrow:active:not(:disabled) {
+    background-color: var(--color-btn-primary-hover);
+  }
+}
+
+.stages-mobile-carousel__arrow:disabled {
+  background-color: var(--color-btn-light-gray);
+  cursor: not-allowed;
+}
+
+.stages-mobile-carousel__arrow:focus-visible {
+  outline: 2px solid var(--color-text-blue);
+  outline-offset: 2px;
+}
+
+/* Thin chevron (white via `color` on button); L-shape from two borders */
+.stages-mobile-carousel__chevron {
+  display: block;
+  box-sizing: border-box;
+  width: 7px;
+  height: 7px;
+  margin: 0;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  transform: rotate(-45deg);
+}
+
+.stages-mobile-carousel__arrow--prev .stages-mobile-carousel__chevron {
+  transform: rotate(135deg);
+}
+
+.stages-mobile-carousel__dots {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.stages-mobile-carousel__dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--color-btn-light-gray);
+}
+
+.stages-mobile-carousel__dot.is-active {
+  background-color: var(--color-text);
+}
+
+.stages-mobile-carousel .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

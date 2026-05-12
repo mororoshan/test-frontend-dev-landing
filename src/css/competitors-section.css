@@ -1,0 +1,314 @@
+.competitors-section {
+  background-color: var(--color-surface);
+  padding: 0 clamp(20px, 5vw, 72px);
+  padding-top: clamp(100px, 5vw, 200px);
+  padding-bottom: clamp(40px, 6vw, 72px);
+  min-width: 0;
+}
+
+.competitors-section__container {
+  max-width: 1222px;
+  margin: 0 auto;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  row-gap: clamp(20px, 4vw, 28px);
+}
+
+@media (min-width: 768px) {
+  .competitors-section__container {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: clamp(16px, 3vw, 32px);
+    row-gap: clamp(24px, 4vw, 40px);
+    align-items: center;
+  }
+
+  .competitors-section__header {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  [data-competitors-nav] {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+  }
+
+  .competitors-carousel__viewport {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+.competitors-section__header {
+  margin: 0;
+}
+
+.competitors-section__title {
+  font-family: var(--font-family-title);
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 400;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.competitors-section__title span {
+  display: block;
+}
+
+[data-competitors-nav] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 3vw, 20px);
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  [data-competitors-nav] {
+    justify-content: flex-end;
+  }
+}
+
+.competitors-carousel__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--color-surface);
+  background-color: var(--color-btn-primary);
+  transition: background-color 0.15s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .competitors-carousel__arrow:hover:not(:disabled) {
+    background-color: var(--color-btn-primary-hover);
+    color: var(--color-text);
+  }
+}
+
+@media (hover: none) {
+  .competitors-carousel__arrow:active:not(:disabled) {
+    background-color: var(--color-btn-primary-hover);
+    color: var(--color-text);
+  }
+}
+
+.competitors-carousel__arrow:disabled {
+  background-color: var(--color-btn-light-gray);
+  color: var(--color-surface);
+  cursor: not-allowed;
+}
+
+.competitors-carousel__arrow:focus-visible {
+  outline: 2px solid var(--color-text-blue);
+  outline-offset: 2px;
+}
+
+/* L-shaped chevron; same geometry as stages carousel */
+.competitors-carousel__chevron {
+  display: block;
+  box-sizing: border-box;
+  width: 8px;
+  height: 8px;
+  margin: 0;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  transform: rotate(-45deg);
+}
+
+.competitors-carousel__chevron--prev {
+  transform: rotate(135deg);
+}
+
+.competitors-carousel__counter {
+  font-family: var(--font-family-base);
+  font-size: clamp(16px, 3vw, 18px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text-gray);
+  min-width: 3.5ch;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.competitors-carousel__viewport {
+  overflow: hidden;
+  outline: none;
+  min-width: 0;
+  max-width: 100%;
+  touch-action: manipulation;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .competitors-carousel__viewport {
+    transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.competitors-carousel__viewport:focus-visible {
+  outline: 2px solid var(--color-text-blue);
+  outline-offset: 4px;
+}
+
+.competitors-carousel__track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  width: max-content;
+  min-width: 0;
+  will-change: transform;
+}
+
+.competitors-carousel__page {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(20px, 4vw, 28px);
+}
+
+@media (min-width: 768px) {
+  .competitors-carousel__page {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: clamp(12px, 2vw, 24px);
+  }
+}
+
+.competitors-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .competitors-card {
+    max-width: none;
+  }
+}
+
+.competitors-card__image {
+  width: 320px;
+  height: 320px;
+  max-width: none;
+  flex-shrink: 0;
+  margin-inline: auto;
+  box-sizing: border-box;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--color-surface-light-brown);
+}
+
+.competitors-card__image img {
+  width: 320px;
+  height: 320px;
+  max-width: none;
+  object-fit: contain;
+  display: block;
+}
+
+.competitors-card__name {
+  margin-top: clamp(12px, 2vw, 20px);
+  font-family: var(--font-family-base);
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+.competitors-card__subtitle {
+  margin-top: 6px;
+  font-family: var(--font-family-base);
+  font-size: clamp(13px, 1.8vw, 15px);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--color-text-gray);
+}
+
+button.competitors-card__more {
+  margin-top: clamp(14px, 2.5vw, 20px);
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--color-text-blue);
+  background-color: var(--color-surface);
+  color: var(--color-text-blue);
+  font-family: var(--font-family-base);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+/* Hover only with real hover (avoids sticky :hover on touch) — same idea as buttons.css */
+@media (hover: hover) and (pointer: fine) {
+  button.competitors-card__more:hover {
+    background-color: var(--color-text-blue);
+    color: var(--color-surface);
+    border-color: var(--color-text-blue);
+  }
+}
+
+/* Tap / press feedback when hover isn’t available — mirrors buttons.css */
+@media (hover: none) {
+  button.competitors-card__more {
+    transition:
+      transform 0.1s ease,
+      opacity 0.1s ease,
+      background-color 0.12s ease,
+      color 0.12s ease,
+      border-color 0.12s ease;
+  }
+
+  button.competitors-card__more:active {
+    transform: scale(0.985);
+    opacity: 0.92;
+  }
+
+  @media (min-width: 796px) {
+    button.competitors-card__more:active {
+      opacity: 1;
+      background-color: var(--color-text-blue);
+      color: var(--color-surface);
+      border-color: var(--color-text-blue);
+      transform: scale(0.985);
+    }
+  }
+}
+
+button.competitors-card__more:focus-visible {
+  outline: 2px solid var(--color-text-blue);
+  outline-offset: 2px;
+}
